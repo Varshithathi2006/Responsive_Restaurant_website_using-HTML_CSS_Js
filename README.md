@@ -4,9 +4,8 @@
 **EaterEase** is a user interface design project developed as part of coursework in the Department of Artificial Intelligence. The project focuses on a food ordering system with a user-friendly interface and smooth transitions to enhance the overall user experience.
 
 ## Project Members
-- Varshitha Thilak Kumar – CB.SC.U4AIE23258  
-- Siri Sanjana S – CB.SC.U4AIE23249  
-
+- **Varshitha Thilak Kumar** – varshitha.9a2019@gmail.com
+- **Siri Sanjana S** – sirisanjana.singareddy@gmail.com
 ## Course
 **User Interface Design**  
 Department of Artificial Intelligence
@@ -19,8 +18,8 @@ EaterEase provides an interactive and responsive UI for a food delivery platform
 - `final.html` – Main landing or home page of the application
 - `d2.html` – Secondary or detail page (e.g., food categories or restaurant listings)
 - `Login_new1.html` – Login page with UI enhancements
-- `new.html` – Possibly a UI prototype or version of the homepage
-- `Location.html` – Page for setting or detecting user location
+- `new.html` –  version of the homepage
+- `Location.html` –  detecting user location
 - `cart.html` – Cart page where users can review and edit orders
 
 ## Features
