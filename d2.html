@@ -1,0 +1,152 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TakeAway</title>
+  
+  <link rel="stylesheet" href="takeaway.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="1393458.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Eczar&family=Fasthand&family=Roboto+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+  </style>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+</head>
+<body>
+  <img src="IMAGES/eaterease.jpg" alt="" class="mainimg">
+  <div class="navbar">
+    <div><a href="final.html" class="navlinks">Home</a></div>
+    <div><a href="final.html#res" class="navlinks">Reservation</a></div>
+    <div><a href="login_new1.html" class="navlinks">Login</a></div>
+   <div>
+    <a href="cart.html"><ion-icon style="color: white; position:static" name="cart"  id="cart-icon"></ion-icon></a></div> 
+   
+  </div>
+ 
+ 
+  
+  <div class="container" style="margin-top: 10%;">
+    <div class="shop-content">
+        <div class="product-box">
+
+            <div class="pic"><img src="IMAGES/2.jpg" class="product-img" style="border-radius: 15px;"></div>
+            <h2 class="product-title">Burger</h2>
+            <span class="product-price">Rs.250</span>
+          <div name="cart" class="add-cart"><button onclick="addToCart('Burger',250)">Add to Cart</button></div>
+          </div>
+      
+          <div class="product-box">
+            <div class="pic"><img src="IMAGES/3.jpeg" class="product-img" style="border-radius: 15px;"></div>
+            <h2 class="product-title">Pizza</h2>
+            <span class="product-price">Rs.300</span>
+          <div name="cart" class="add-cart"><button onclick="addToCart('pizza',300)">Add to Cart</button></div>
+          </div>
+
+          <div class="product-box">
+            <div class="pic"><img src="IMAGES/ppasta.jpg" class="product-img" style="border-radius: 15px;"></div>
+            <h2 class="product-title">Penne Pasta</h2>
+            <span class="product-price">Rs.150</span>
+            <div name="cart" class="add-cart"><button onclick="addToCart('penne pasta',150)">Add to Cart</button></div>
+          </div>
+
+          <div class="product-box">
+            <div class="pic"><img src="IMAGES/noodles.jpg" class="product-img" style="border-radius: 15px;"></div>
+            <h2 class="product-title">Noodles</h2>
+            <span class="product-price">Rs.300</span>
+          <div name="cart" class="add-cart"><button onclick="addToCart('Noodles',300)">Add to Cart</button></div>
+          </div>
+  
+      <div class="product-box">
+        <div class="pic"><img src="IMAGES/sandw.jpg" class="product-img" style="border-radius: 15px;"></div>
+        <h2 class="product-title">Sandwich</h2>
+        <span class="product-price">Rs.90</span>
+        <div name="cart" class="add-cart"><button onclick="addToCart('Sandwich',90)">Add to Cart</button></div>
+      </div>
+  
+      <div class="product-box">
+        <div class="pic"><img src="IMAGES/fried rice.jpg" class="product-img" style="border-radius: 15px;"></div>
+        <h2 class="product-title">Fried Rice</h2>
+        <span class="product-price">Rs.200</span>
+        <div name="cart" class="add-cart"><button onclick="addToCart('Fried Rice',200)">Add to Cart</button></div>
+      </div>
+
+      <div class="product-box">
+        <div class="pic"><img src="IMAGES/Dessert 2.jpg" class="product-img" style="border-radius: 15px;"></div>
+        <h2 class="product-title">Dessert</h2>
+        <span class="product-price">Rs.150</span>
+        <div name="cart" class="add-cart"><button onclick="addToCart('Dessert',150)">Add to Cart</button></div>
+      </div>
+  
+      <div class="product-box">
+        <div class="pic"><img src="IMAGES/dri.jpeg" class="product-img" style="border-radius: 15px;"></div>
+        <h2 class="product-title">Drinks</h2>
+        <span class="product-price">Rs.65</span>
+        <div name="cart" class="add-cart"><button onclick="addToCart('Drinks',65)">Add to Cart</button></div>
+      </div>
+
+      <div class="product-box">
+        <div class="pic"><img src="IMAGES/icecream.jpg" class="product-img" style="border-radius: 15px;"></div>
+        <h2 class="product-title">Icecream</h2>
+        <span class="product-price">Rs.100</span>
+        <div name="cart" class="add-cart"><button onclick="addToCart('Icecream',100)">Add to Cart</button></div>
+      </div>
+
+      <div class="product-box">
+        <div class="pic"><img src="IMAGES/CB.jpg" class="product-img" style="border-radius: 15px;"></div>
+        <h2 class="product-title">Chicken Biriyani</h2>
+        <span class="product-price">Rs.150</span>
+        <div name="cart" class="add-cart"><button onclick="addToCart('Chicken Biriyani',150)">Add to Cart</button></div>
+      </div>
+  
+      <div class="product-box">
+        <div class="pic"><img src="IMAGES/lasagna.jpg" class="product-img" style="border-radius: 15px;"></div>
+        <h2 class="product-title">lasagna</h2>
+        <span class="product-price">Rs.330</span>
+        <div name="cart" class="add-cart"><button onclick="addToCart('lasagna',330)">Add to Cart</button></div>
+      </div>
+
+      <div class="product-box">
+        <div class="pic"><img src="IMAGES/MB.jpg" class="product-img" style="border-radius: 15px;"></div>
+        <h2 class="product-title">Mutton Biriyani</h2>
+        <span class="product-price">Rs.280</span>
+        <div name="cart" class="add-cart"><button onclick="addToCart('Mutton Biriyani',280)">Add to Cart</button></div>
+      </div>
+
+      
+    </div>
+  </div>
+
+<script>
+  function addToCart(itemName, price) {
+      // Retrieve existing cart items from local storage or initialize an empty array
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+      // Push the new item to the cart
+      cartItems.push({ name: itemName, price: price });
+
+      // Store the updated cart items back to local storage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+      // Alert the user that the item has been added to the cart
+      alert(itemName + ' added to cart!');
+  }
+</script>
+</body>
+</html>

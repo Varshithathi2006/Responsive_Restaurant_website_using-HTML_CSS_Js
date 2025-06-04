@@ -1,0 +1,157 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+        background: url('IMAGES/eaterease.jpg') no-repeat center center fixed;
+        background-size: cover;
+        background-attachment: scroll;
+      }
+  
+
+
+  #cart-icon{
+    font-size: 3rem;
+    cursor: pointer;
+    width:30px;
+    height:35px;
+    size: 40px;
+    /* position: fixed; */
+   
+  }
+  
+  img{
+    width: 100%;
+  }
+  
+  .container{
+    max-width: 1200px;
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+  }
+  
+  h2.title{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color:#ffffff;
+  }
+  
+  .shop-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+    row-gap:2rem;
+    column-gap: 4rem;
+    margin-top: -170px;
+    
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .product-box{
+    position: relative;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+    border-radius: 15px;
+    
+  }
+  
+  .pic{
+    overflow: hidden;
+  }
+  
+  .pic:hover img{
+  transform: scale(1.5);
+  }
+  
+  .product-img{
+    transition: 0.4s;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  
+  }
+  
+  .product-title{
+    font-size: 0.85rem;
+    font-weight: 600;
+    color:#ff6348;
+  }
+  
+  .product-price{
+    font-size: 0.8rem;
+    font-weight:500 ;
+  }
+  
+  .add-cart{
+    position: absolute;
+    left: 80px;
+    top: 225px;
+    font-size: 17px;
+    color:rgb(4, 0, 0);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s; 
+  }
+  
+  .add-cart:hover{
+    transform: scale(1.5);
+  }
+  
+  .cart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(40, 37, 37, 0.1);
+    z-index: 100;
+  }
+  
+  .mainimg{
+      width:100%;
+      max-width: 100%;
+      max-height: 100%;
+      background-size: 100% 100%;
+      
+  }
+  .navbar{
+      display: flex;
+      gap: 4rem;
+      justify-content: center;
+      margin-top: -60%;
+      margin-left: 5%;
+     
+  }
+  .navlinks{
+      text-decoration: none;
+      color: white;
+      font-size: 23px;
+  }
+  .navlinks:hover{
+  color: rgb(251, 116, 116);
+    text-decoration: none;
+  }
+
+  button {
+    background-color: #000000;
+    color: white;
+    padding: 5px 11px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover {
+    background-color: #000000;
+}

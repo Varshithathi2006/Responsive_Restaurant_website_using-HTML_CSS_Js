@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            background-image: url('IMAGES/Dessert 1.jpg'); /* Add background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Cart Styles */
+        .cart-container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .cart-item img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+
+        .cart-item-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .cart-item-price {
+            font-size: 16px;
+            color: #888;
+        }
+
+        .cart-total {
+            text-align: right;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .quantity {
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        .place-order-btn {
+            background-color: #f0c14b;
+            color: #111;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .place-order-btn:hover {
+            background-color: #ddb347;
+        }
+
+        /* Popup Styles */
+        .popup {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            visibility: hidden;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .popup-img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .popup h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .popup p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .popup-btn {
+            background-color: #f0c14b;
+            color: #111;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-btn:hover {
+            background-color: #ddb347;
+        }
+
+        .popup.open {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="cart-container" id="cartContainer">
+       
+    </div>
+
+    <button class="place-order-btn" onclick="openPopup()">Place Order</button>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <img src="IMAGES/tick.jpg" alt="Tick" class="popup-img">
+            <h2>Thank You!</h2>
+            <p>Order Placed Successfully!</p>
+            <button class="popup-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let popup = document.getElementById("popup");
+
+    function openPopup() {
+        popup.classList.add("open");
+    }
+
+    function closePopup() {
+        popup.classList.remove("open");
+    }
+
+    // Retrieve cart items from local storage
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Function to display cart items
+    function displayCartItems() {
+        let cartContainer = document.getElementById('cartContainer');
+        cartContainer.innerHTML = "";
+
+        if (cartItems.length === 0) {
+            cartContainer.innerHTML = "<p>Your cart is empty.Go grab some food!</p>";
+            return;
+        }
+
+        cartItems.forEach((item, index) => {
+            let itemElement = document.createElement('div');
+            itemElement.classList.add('cart-item');
+            itemElement.innerHTML = `
+                <div class="cart-item-info">
+                    <div class="cart-item-name">${item.name || 'Unknown Item'}</div>
+                    <div class="cart-item-price">Price: Rs. ${item.price || 0} ${(item.quantity > 1) ? `(${item.quantity} pcs)` : ''}</div>
+                </div>
+                <button onclick="removeItem(${index})">-</button>
+                <span class="quantity">${item.quantity||0}</span>
+                <button onclick="addItem(${index})">+</button>
+            `;
+            cartContainer.appendChild(itemElement);
+        });
+
+        // Calculate and display total price
+        let totalPrice = cartItems.reduce((total, item) => total + (item.price * item.quantity||0), 0);
+        let totalElement = document.createElement('div');
+        totalElement.classList.add('cart-total');
+        totalElement.textContent = `Total: Rs. ${totalPrice}`;
+        cartContainer.appendChild(totalElement);
+    }
+
+    // Function to add item to cart
+    function addItem(index) {
+    if (!cartItems[index].quantity) {
+        cartItems[index].quantity = 1; // Initialize quantity if not set
+    } else {
+        cartItems[index].quantity++; // Increment quantity if already set
+    }
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    displayCartItems();
+}
+
+    // Function to remove item from cart
+    function removeItem(index) {
+        if (cartItems[index].quantity && cartItems[index].quantity > 1) {
+            cartItems[index].quantity--;
+        } else {
+            cartItems.splice(index, 1);
+        }
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        displayCartItems();
+    }
+
+    // Call displayCartItems when page loads
+    displayCartItems();
+</script>
+
+</body>
+</html>

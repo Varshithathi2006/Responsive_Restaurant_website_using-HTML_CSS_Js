@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login_new1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("IMAGES/pexels-elle-hughes-1660030.jpg");
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+        .forms label{
+            font-weight:600;
+        }
+        .block1{
+            position:relative;
+            left:60%;
+        }
+    </style>
+</head>
+<body>
+    <div style="float:right;position:relative;bottom: 9rem; right:2rem;">
+        <a href="login_new1.html" style="text-decoration: none; color:black;font-size: 1.3rem;">Sign In</a><span style="margin-inline:1rem;">|</span><span><a href=""style="text-decoration: none; color:black;">Sign Up</a></span>
+    </div>
+    <div class="block1">
+        <div class="text" style="font-size:1.7rem; font-weight: 100;">Personal</div>
+        <div class="text" style="font-size:1.7rem; font-weight:bold;margin-bottom:1rem;">Information</div>
+        <h2>Signup Form</h2>
+    <form action="submit-signup.php" method="post" onsubmit="return validateForm()" class="forms">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">New Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="confirmPassword">Re-enter New Password:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+
+        <span id="error-message" class="error"></span>
+
+        <button type="submit" class=login onclick="showAlert()">Sign Up</button>
+    </form>
+        <br>
+
+         <script>
+            function validateForm() {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match!";
+                return false; // Prevent form submission
+            }
+
+            // Store user credentials in local storage (for demonstration only)
+            localStorage.setItem('username', username);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+
+            errorMessage.textContent = "";
+            window.location.href = "login_new1.html"; // Redirect to login page
+            return false; // Prevent form submission for demonstration
+        }
+        </script>
+    </div>
+</body>
+</html>

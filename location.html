@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Location</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url('IMAGES/cart.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        .header {
+            padding: 50px;
+            background-color: rgba(51, 51, 51, 0.3); /* Semi-transparent background */
+            width: 100%;
+        }
+
+        .map-container {
+            width: 100%;
+            height: calc(100% - 150px); /* Full height minus header height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        iframe {
+            border: 0;
+            width: 80%;
+            height: 80%;
+            max-width: 600px;
+            max-height: 450px;
+        }
+
+        .footer-container {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.3); /* Semi-transparent background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .social-media i {
+            margin: 0 10px;
+            font-size: 24px;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .social-media i:hover {
+            color: #ddd;
+        }
+
+        
+
+        .working-hours th, .working-hours td {
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Incredible food to dine at!</h1>
+        <h2>Here's the way to our Restaurant...</h2>
+    </div>
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.4735445534625!2d76.96690707317318!3d11.003053354976405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8590018c27dd7%3A0x6534594cbfe7cf7!2sEaterEase!5e0!3m2!1sen!2sin!4v1716547080046!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-google"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+           <div class="working-hours">
+            <h3>Opening Hours</h3>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Hours</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>9:00 AM - 9:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>9:00 AM - 9:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>9:00 AM - 9:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>9:00 AM - 10:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>10:00 AM - 10:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>10:00 AM - 10:00 PM</td>
+                </tr>
+            </table>
+        </div>
+            </div>
+            <div class="contact-info">
+                <h3>Contacts</h3>
+                <p><b>Email:</b> support@mobirise.com</p>
+                <p><b>Phone:</b> +1 (0) 000 0000 001</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login_new1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="float:right;position:relative;bottom: 9rem; right:2rem;">
+        <a href="" style="text-decoration: none; color:black;">Sign In</a><span style="margin-inline:1rem;">|</span><span><a href="new.html" style="text-decoration: none; color:black;font-size: 1.3rem;">Sign Up</a></span>
+    </div>
+    <div class="block1">
+        <div class="text" style="font-size:1.7rem; font-weight: 100;">Hello there,</div>
+        <div class="text" style="font-size:1.7rem; font-weight:bold;margin-bottom:1rem;">Welcome to Bellisa</div>
+        <form onsubmit="return validateLoginForm()" class="forms" id="login-forms">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+    
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+    
+            <span id="error-message" class="error"></span><br><br>
+            <button class="login" onclick=" validateLogin();">LOGIN</button>
+        
+    
+        </form>
+            <a href="new.html">Forgot password?</a>
+        
+        <br>
+        
+
+          
+            <script>
+
+                   
+        function validateLoginForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            if (username === storedUsername && password === storedPassword) {
+                errorMessage.textContent = "";
+                window.location.href = "final.html"; // Redirect to home page
+                return false; // Prevent form submission for demonstration
+            } else {
+                errorMessage.textContent = "Invalid username or password!";
+                return false; // Prevent form submission
+            }
+        }
+        
+            
+        </script>
+               
+                
+        
+        <div id="signin">
+            <p style="font-size:0.80rem;">Sign in with:</p>
+            <a href=""><i class="fab fa-google"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+</body>
+</html>
